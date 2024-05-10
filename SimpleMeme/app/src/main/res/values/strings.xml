@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SimpleMeme</string>
+    <string name="simple_meme">Simple Meme</string>
+    <string name="first_image">I am a python programmer</string>
+    <string name="second_image">What does that mean?</string>
+    <string name="third_image">It means he\'s afraid of basic C++</string>
+    <string name="fourth_image">No it doesn\'t!</string>
+    <string name="fifth_image">STDAFK.H IOSTREAM</string>
+    <string name="sixth_image"><![CDATA[#include<iostream> int main() { std::cout << Stop it Patrick you are scaring him!; return 0;}]]></string>
+</resources>
