@@ -10,7 +10,7 @@ import com.example.recyclerviewtask.databinding.ReceivedMessageBinding
 import com.example.recyclerviewtask.databinding.SentMessageBinding
 
 class MessagesAdapter : RecyclerView.Adapter<ViewHolder>() {
-    private val messages: MutableList<Message> = mutableListOf()
+    val messages: MutableList<Message> = mutableListOf()
 
     class SentMessageViewHolder(val binding: SentMessageBinding) : ViewHolder(binding.root)
 
@@ -45,27 +45,33 @@ class MessagesAdapter : RecyclerView.Adapter<ViewHolder>() {
             is SentMessageViewHolder -> {
                 holder.binding.name.text = message.name
                 holder.binding.message.text = message.content
-                holder.binding.time.text = message.time.toString()
+                holder.binding.time.text = message.time
             }
 
             is ReceivedMessageViewHolder -> {
                 holder.binding.name.text = message.name
                 holder.binding.message.text = message.content
-                holder.binding.time.text = message.time.toString()
+                holder.binding.time.text = message.time
             }
 
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
 
-    fun attachToRecyclerView(recyclerView: RecyclerView) {
-        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean {
+    fun attachToRecyclerView(recyclerView: RecyclerView, filter: (Int) -> Unit){
+        val itemTouchHelperCallback = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: ViewHolder,
+                target: ViewHolder
+            ): Boolean {
                 return false // We don't want to support move operation in this case
             }
 
             override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
+                filter(position)
                 updateList(messages.filterIndexed { index, _ -> index != position })
             }
         }

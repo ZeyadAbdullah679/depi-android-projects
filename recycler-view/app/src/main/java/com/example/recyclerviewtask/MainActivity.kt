@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val messagesAdapter = MessagesAdapter()
 
         // Adapter Customizations
-        messagesAdapter.attachToRecyclerView(binding.rvMessages)
+        messagesAdapter.attachToRecyclerView(binding.rvMessages) { messages.removeAt(it) }
         val paddingInDp = 16
         val paddingInPx = (paddingInDp * Resources.getSystem().displayMetrics.density).toInt()
         binding.rvMessages.addItemDecoration(PaddingItemDecoration(paddingInPx))
