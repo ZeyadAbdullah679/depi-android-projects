@@ -2,4 +2,7 @@
     <string name="app_name">RecyclerViewTask</string>
     <string name="avatar">Avatar</string>
     <string name="enter_a_message">Enter a message…</string>
+    <string name="receiver">Receiver</string>
+    <string name="sender">Sender</string>
+    <string name="simple_chat_app">Simple Chat App</string>
 </resources>

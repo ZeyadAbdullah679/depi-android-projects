@@ -8,34 +8,48 @@
     android:padding="@dimen/large_padding"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_messages"
+    <Toolbar
+        android:id="@+id/appbar"
+        android:title="@string/simple_chat_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="6"
-        tools:listitem="@layout/received_message" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:paddingHorizontal="@dimen/large_padding"
         android:autofillHints=""
         android:hint="@string/enter_a_message"
+        android:imeOptions="actionSend"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
         app:layout_constraintEnd_toStartOf="@+id/switch_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.materialswitch.MaterialSwitch
         android:id="@+id/switch_btn"
         android:layout_width="wrap_content"
+        android:paddingHorizontal="@dimen/large_padding"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/sender"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Sender" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText"
+        tools:itemCount="6"
+        tools:listitem="@layout/received_message" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

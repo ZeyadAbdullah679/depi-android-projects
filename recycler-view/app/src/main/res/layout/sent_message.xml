@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/blue"
     app:cardCornerRadius="@dimen/medium_padding"
-    app:cardElevation="@dimen/large_padding">
+    app:cardElevation="@dimen/medium_padding">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
             android:id="@+id/image"
             android:layout_width="@dimen/image_size"
             android:layout_height="@dimen/image_size"
+            android:padding="@dimen/medium_padding"
             android:contentDescription="@string/avatar"
             android:src="@drawable/me"
             app:layout_constraintBottom_toBottomOf="parent"
