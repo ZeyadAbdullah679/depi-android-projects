@@ -3,4 +3,18 @@
     <string name="navigate_to_profile">Navigate To Profile</string>
     <string name="home_screen">Home Screen</string>
     <string name="profile_screen">Profile Screen</string>
+    <string name="name">Name</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="username">Zeyad Abdullah</string>
+    <string name="email">zeyadgalal93@gmail.com</string>
+    <string name="email_textview">Email</string>
+    <string name="age_textview">Age</string>
+    <string name="age">23 Years old</string>
+    <string name="birthday_icon">Birthday Icon</string>
+    <string name="job_icon">Job Icon</string>
+    <string name="job_textview">Job</string>
+    <string name="job">Android Developer</string>
+    <string name="facebook">Facebook</string>
+    <string name="github">Github</string>
+    <string name="linkedin">LinkedIn</string>
 </resources>
