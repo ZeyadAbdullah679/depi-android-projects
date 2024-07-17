@@ -8,4 +8,5 @@ The goal of this project is to create a chat application user interface using Re
 
 
 ## Video
-[![Watch the video](video.mp4)](video.mp4)
+https://github.com/ZeyadAbdullah679/depi-android-projects/assets/90288511/187ffcce-df59-42f7-af74-298b607fecd2
+
