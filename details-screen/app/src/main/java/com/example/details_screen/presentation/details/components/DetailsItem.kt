@@ -20,7 +20,7 @@ fun DetailsItem(
     modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = modifier.size(100.dp),
+        modifier = modifier.size(50.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
