@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">details-screen</string>
+    <string name="details_screen">Details Screen</string>
+    <string name="back">Back</string>
+    <string name="google_logo">Google Logo</string>
+    <string name="language">Language</string>
 </resources>
