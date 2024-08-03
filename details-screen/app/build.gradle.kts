@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.details_screen"
+    namespace = "com.example.repos"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.details_screen"
-        minSdk = 24
+        applicationId = "com.example.repos"
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

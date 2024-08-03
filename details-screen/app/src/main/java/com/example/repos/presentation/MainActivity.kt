@@ -1,19 +1,21 @@
-package com.example.details_screen.presentation
+package com.example.repos.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.details_screen.presentation.details.DetailsScreen
-import com.example.details_screen.presentation.details.components.RepoDetails
-import com.example.details_screen.ui.theme.DetailsScreenTheme
+import androidx.compose.material3.ExperimentalMaterial3Api
+import com.example.repos.presentation.details.DetailsScreen
+import com.example.repos.presentation.details.components.RepoDetails
+import com.example.repos.ui.theme.ReposAppTheme
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalMaterial3Api
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            DetailsScreenTheme {
+            ReposAppTheme {
                 DetailsScreen(
                     repoDetails = RepoDetails(
                         name = "Jetpack Compose",

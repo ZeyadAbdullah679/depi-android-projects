@@ -1,5 +1,6 @@
-package com.example.details_screen.presentation.details
+package com.example.repos.presentation.details
 
+import AppBar
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -18,16 +20,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
-import com.example.details_screen.presentation.details.components.DetailsAppBar
-import com.example.details_screen.presentation.details.components.DetailsItem
-import com.example.details_screen.presentation.details.components.RepoDetails
-import com.example.details_screen.ui.theme.DetailsScreenTheme
+import com.example.repos.R
+import com.example.repos.presentation.details.components.DetailsItem
+import com.example.repos.presentation.details.components.RepoDetails
+import com.example.repos.ui.theme.ReposAppTheme
 
+@ExperimentalMaterial3Api
 @Composable
 fun DetailsScreen(
     repoDetails: RepoDetails,
@@ -37,8 +41,9 @@ fun DetailsScreen(
 ) {
     Scaffold(modifier = modifier.fillMaxSize(),
         topBar = {
-            DetailsAppBar(
-                onClick = onClickBack
+            AppBar(
+                title = stringResource(id = R.string.details_screen),
+                onBackArrowClicked = onClickBack
             )
         }
     ) { innerPadding ->
@@ -70,17 +75,17 @@ fun DetailsScreen(
             ) {
                 DetailsItem(
                     value = repoDetails.starsCount.toString(),
-                    image = com.example.details_screen.R.drawable.star,
+                    image = R.drawable.star,
                     modifier = Modifier.weight(1f)
                 )
                 DetailsItem(
                     value = repoDetails.language,
-                    image = com.example.details_screen.R.drawable.blue_circle,
+                    image = R.drawable.blue_circle,
                     modifier = Modifier.weight(1f)
                 )
                 DetailsItem(
                     value = repoDetails.forksCount.toString(),
-                    image = com.example.details_screen.R.drawable.git,
+                    image = R.drawable.git,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -111,10 +116,11 @@ fun DetailsScreen(
 }
 
 
+@ExperimentalMaterial3Api
 @Preview(showBackground = true)
 @Composable
 fun DetailsScreenPreview() {
-    DetailsScreenTheme {
+    ReposAppTheme {
         DetailsScreen(
             repoDetails = RepoDetails(
                 name = "Jetpack Compose",

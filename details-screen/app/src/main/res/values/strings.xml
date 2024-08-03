@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">details-screen</string>
+    <string name="app_name">Repos App</string>
     <string name="details_screen">Details Screen</string>
     <string name="back">Back</string>
     <string name="google_logo">Google Logo</string>
     <string name="language">Language</string>
+    <string name="issues_screen">Issues Screen</string>
+    <string name="issues_screen_created_at">"Created At: "</string>
 </resources>

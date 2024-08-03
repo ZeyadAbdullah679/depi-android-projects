@@ -1,4 +1,4 @@
-package com.example.details_screen.presentation.details.components
+package com.example.repos.presentation.details.components
 
 data class RepoDetails(
     val name: String,

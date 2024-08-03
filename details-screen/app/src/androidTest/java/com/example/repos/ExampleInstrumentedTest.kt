@@ -1,4 +1,4 @@
-package com.example.details_screen
+package com.example.repos
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "details-screen"
+rootProject.name = "ReposApp"
 include(":app")
  

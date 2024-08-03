@@ -1,4 +1,4 @@
-package com.example.details_screen
+package com.example.repos
 
 import org.junit.Test
 
