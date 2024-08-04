@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.repos.R
@@ -29,35 +31,61 @@ fun IssuesItem(
     Card(
         modifier = modifier
             .fillMaxWidth(),
-        shape = MaterialTheme.shapes.small,
+        shape = MaterialTheme.shapes.medium,
         colors = CardDefaults.cardColors(
             containerColor = Color.White
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 2.dp
         )
     ) {
-        Row(
-            modifier = Modifier.padding(4.dp),
-            verticalAlignment = Alignment.Top,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        Column(
+            modifier = Modifier.padding(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            IssuesIcon()
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.Center
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Text(text = issuesDetails.title)
-                Text(text = issuesDetails.author)
+                IssuesIcon()
+                Text(
+                    text = issuesDetails.title,
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        fontWeight = FontWeight.SemiBold,
+                    ),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    text = issuesDetails.status,
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
+            Column(
+                modifier = Modifier.padding(start = 32.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = issuesDetails.author,
+                    style = MaterialTheme.typography.bodyLarge
+                )
                 Row {
                     Text(
-                        text = stringResource(R.string.issues_screen_created_at)
+                        text = stringResource(R.string.issues_screen_created_at),
+                        style = MaterialTheme.typography.bodyMedium.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        )
                     )
                     Text(
                         text = issuesDetails.creationTime.format(
                             DateTimeFormatter.ofPattern("yyyy-MM-dd, HH:mm a")
-                        )
+                        ),
+                        style = MaterialTheme.typography.bodyMedium
                     )
                 }
             }
-            Text(text = issuesDetails.status)
+
         }
     }
 }
@@ -68,7 +96,7 @@ private fun IssuesItemPreview() {
     ReposAppTheme {
         IssuesItem(
             issuesDetails = IssuesDetails(
-                title = "title",
+                title = "fix going to have in the hell of cheese",
                 author = "NONE",
                 status = "Open",
                 creationTime = LocalDateTime.now(),
